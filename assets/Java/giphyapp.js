@@ -1,18 +1,18 @@
 //Array of shows for gifs
 var memes = ["trending", "the simpsons", "spongebob", "king of the hill", "south park", "bobs burger", "family guy", "tom and jerry"];
 //API test
-var memes = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=LS1HNxaxg8yQf68z10qhwgr4cY9m12FU";
+// var memes = $(this).attr("data-name");
+//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=LS1HNxaxg8yQf68z10qhwgr4cY9m12FU";
     
-    // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + memes + "&api_key=LS1HNxaxg8yQf68z10qhwgr4cY9m12FU";
+    
         
     //ajax call for giphy url
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function(results) {
-        console.log(results.data);
-    })
+    // $.ajax({
+    //     url: queryURL,
+    //     method: "GET"
+    // }).then(function(results) {
+    //     console.log(results.data);
+    // })
 //gif ,rating display
 function displayGif() {
 
@@ -46,6 +46,18 @@ function displayGif() {
                 $("#gifs-here").prepend(gifDiv);
             }
         }
-    })
-
+    });
 }
+//function to display meme buttons
+function displayButton() {
+    $("#button-view").empty();
+
+    for (var i = 0; i < memes.length; i++) {
+        var a = $("<button>");
+        a.addClass("meme-btn");
+        a.attr("data-name", memes[i]);
+        a.text(memes[i]);
+        $("#button-view").append(a);
+    }
+}
+displayButton();
