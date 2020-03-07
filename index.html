@@ -3,11 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/style/style.css">
     <title>Giphy gif gif page</title>
 </head>
 
 <body>
-    
-    
+    <header>Click these buttons for some GIF's! or create a button for the GIF's you want!</header>
+    <form id="gif-form">
+        <label for="gif-input">Add a gif button!</label>
+        <input type="text" id="gif-input"><br>
+  
+        <!-- Button triggers new movie to be added -->
+        <input id="add-gif" type="submit" value="Add results!">
+      </form>
+    <div id="gifs-here">
+
+    </div>
+    <script src="assets/java/giphyapp.js"></script>
 </body>
 </html>
