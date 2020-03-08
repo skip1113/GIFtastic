@@ -32,7 +32,7 @@ function displayGif() {
             //create gif div
             var gifDiv = $("<div>");
             //store gif ratings
-            var rating = results[0].rating;
+            var rating = results[i].rating;
             //creating p tag with rating and rating results
             var p = $("<p>").text("Rating: " + rating);
             //creating image tag
@@ -49,7 +49,7 @@ function displayGif() {
 
     });
 }
-displayGif();
+// displayGif();
 //function to display meme buttons
 function displayButton() {
     $("#button-view").empty();
@@ -64,8 +64,8 @@ function displayButton() {
 }
 $("#add-gif").on("click", function (event) {
     event.preventDefult();
-    var meme = $("#movie-input").val().trim();
-    memes.push(meme);
+    var meme = $("#gif-input").val().trim();
+    meme.push(memes);
     displayButton();
     displayGif();
 })
