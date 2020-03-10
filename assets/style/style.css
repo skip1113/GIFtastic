@@ -1,0 +1,29 @@
+body{
+    background-image: url("https://coolbackgrounds.io/images/backgrounds/index/disco-dba865f1.png");
+}
+header{
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    background-image: url("https://media.giphy.com/media/6uu3ZNNgRBt61eZ1Zh/giphy.gif");
+
+}
+#gif-form{
+    font-weight: bold;
+    float: right;
+    margin-left: 500px;
+    width: 20%;
+    clear: left;
+    color: white;
+}
+.btn, #gif-form, add-gif{
+    margin: 4px;
+}
+#gifId{
+    float: left;
+    clear: right;
+    padding: 10px;
+    margin: 10px;
+    background-color: rgb(231, 124, 245);
+    border: 2px black solid;
+}

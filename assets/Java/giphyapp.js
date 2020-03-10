@@ -42,7 +42,7 @@ function displayGif() {
             gifImage.attr("src", results[i].images.fixed_height_still.url).append(gifImage);
             //give gifImage attribute of stop and animate
             gifImage.attr("data-still", results[i].images.fixed_height_still.url).append(gifImage);
-            gifImage.attr("data-animate", results[i].images.fixed_height_small.url).append(gifImage);
+            gifImage.attr("data-animate", results[i].images.fixed_height.url).append(gifImage);
             gifDiv.append(headClick);
             gifImage.attr("data-state", "still").append(gifImage);
             //append image and rating to new div created
@@ -62,7 +62,7 @@ function displayButton() {
 
     for (var i = 0; i < memes.length; i++) {
         var a = $("<button>");
-        a.addClass("gif-btn btn btn-primary");
+        a.addClass("gif-btn btn btn-info");
         a.attr("data-name", memes[i]);
         a.text(memes[i]);
         $("#buttons-view").append(a);
