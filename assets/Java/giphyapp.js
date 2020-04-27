@@ -1,19 +1,6 @@
 //Array of shows for gifs
 var memes = ["Simpsons", "Spongebob", "King of the hill", "South park", "Bobs burger", "Family guy", "Tom and jerry"];
-//API test
-// var memes = $(this).attr("data-name");
-//     var queryURL = "https://api.giphy.com/v1/gifs/search?q=simpsons&api_key=LS1HNxaxg8yQf68z10qhwgr4cY9m12FU";
 
-
-
-// //ajax call for giphy url
-// $.ajax({
-//     url: queryURL,
-//     method: "GET"
-// }).then(function(results) {
-//     console.log("rating " + results[0].rating);
-//})
-// gif ,rating display
 function displayGif() {
     var limit = 10;
     var searchMemes = $(this).attr("data-name");
@@ -48,15 +35,15 @@ function displayGif() {
             //append image and rating to new div created
             gifDiv.append(gifImage);
             gifDiv.append(p);
-            //prepend image and rating to html
+            // prepend image and rating to html
             $("#gifs-here").prepend(gifDiv);
+            
         }    
 
 
     });
 }
-// displayGif();
-//function to display meme buttons
+
 function displayButton() {
     $("#buttons-view").empty();
 
