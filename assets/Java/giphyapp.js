@@ -14,34 +14,36 @@ function displayGif() {
         var results = response.data;
         console.log(results);
         // var imgUrl = response[0].url;
-        for (var i = 0; i < results.length; i++) {
-            
-            //create gif div
-            var gifDiv = $("<div id='gifId'>").addClass("mx-auto text-center");
-            //store gif ratings
-            var ratings = results[i].rating;
-            //creating p tag with rating and rating results
-            var p = $("<p>").text("Rated: " + ratings);
-            var headClick = $("<p>").text("Click to Animate!");
-            //creating image tag
-            var gifImage = $("<img>").addClass("jiff");
-            //give gifimage src attribute for image
-            gifImage.attr("src", results[i].images.fixed_height_still.url).append(gifImage);
-            //give gifImage attribute of stop and animate
-            gifImage.attr("data-still", results[i].images.fixed_height_still.url).append(gifImage);
-            gifImage.attr("data-animate", results[i].images.fixed_height.url).append(gifImage);
-            gifDiv.append(headClick);
-            gifImage.attr("data-state", "still").append(gifImage);
-            //append image and rating to new div created
-            gifDiv.append(gifImage);
-            gifDiv.append(p);
-            // prepend image and rating to html
-            $("#gifs-here").prepend(gifDiv);
-            
-        }    
-
-
+        displayFunc(response);
     });
+}
+function displayFunc(response) {
+    var results = response.data;
+    for (var i = 0; i < results.length; i++) {
+            
+        //create gif div
+        var gifDiv = $("<div id='gifId'>").addClass("mx-auto text-center");
+        //store gif ratings
+        var ratings = results[i].rating;
+        //creating p tag with rating and rating results
+        var p = $("<p>").text("Rated: " + ratings);
+        var headClick = $("<p>").text("Click to Animate!");
+        //creating image tag
+        var gifImage = $("<img>").addClass("jiff");
+        //give gifimage src attribute for image
+        gifImage.attr("src", results[i].images.fixed_height_still.url).append(gifImage);
+        //give gifImage attribute of stop and animate
+        gifImage.attr("data-still", results[i].images.fixed_height_still.url).append(gifImage);
+        gifImage.attr("data-animate", results[i].images.fixed_height.url).append(gifImage);
+        gifDiv.append(headClick);
+        gifImage.attr("data-state", "still").append(gifImage);
+        //append image and rating to new div created
+        gifDiv.append(gifImage);
+        gifDiv.append(p);
+        // prepend image and rating to html
+        $("#gifs-here").prepend(gifDiv);
+        
+    }    
 }
 
 function displayButton() {
